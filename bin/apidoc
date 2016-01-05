@@ -48,6 +48,8 @@ var argv = nomnom
     .option('parse-parsers'  , { list: true, help: 'Optional user defined parsers. Format name=filename' })
     .option('parse-workers'  , { list: true, help: 'Optional user defined workers. Format name=filename' })
 
+    .option('external', { flag: true, 'default': false, help: 'Show only external endpoints.' })
+
     .option('silent', { flag: true, 'default': false, help: 'Turn all output off.' })
 
     .option('simulate', { flag: true, 'default': false, help: 'Execute but not write any file.' })
@@ -94,6 +96,7 @@ var options = {
     debug         : argv['debug'],
     parse         : argv['parse'],
     colorize      : argv['color'],
+    external      : argv['external'],
     filters       : transformToObject(argv['parse-filters']),
     languages     : transformToObject(argv['parse-languages']),
     parsers       : transformToObject(argv['parse-parsers']),
